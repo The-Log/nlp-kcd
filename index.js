@@ -21,6 +21,8 @@ var book = "";
 
 var charsToSig = new Map();
 
+app.set('port', (process.env.PORT || 5000));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -47,10 +49,9 @@ app.post('/myaction', function(req, res){
   });
 });
 
-app.listen(8080, function () {
-  console.log('hosted on: http://localhost:8080');
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
-
 
 function sendRequest(url, req, res){
   request(url, function(error, response, html){
