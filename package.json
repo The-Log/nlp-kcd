@@ -1,6 +1,6 @@
 {
   "name": "nlp-kcd",
-  "version": "1.0",
+  "version": "0.0.1",
   "description": "NLP based Key Character Detector",
   "engines": {
     "node": "7.2.1"
