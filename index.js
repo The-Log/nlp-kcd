@@ -4,13 +4,15 @@ var cheerio =  require("cheerio");
 var request = require("request");
 var path = require('path');
 var bodyParser = require('body-parser');
+
+
 var natural = require("natural");
   TfIdf = natural.TfIdf,
-  NGrams = natural.NGrams,
   nounInflector = new natural.NounInflector();
   tfidf = new TfIdf();
 var pos = require('pos');
 
+var NGrams = natural.NGrams;
 var stopWords = require('stopwords').english;
 require('events').EventEmitter.prototype._maxListeners = 100;
 
@@ -21,14 +23,11 @@ var charsToSig = new Map();
 
 app.set('port', (process.env.PORT || 5000));
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-
-app.get('/', function(request, response) {
-  response.render('pages/index');
+app.get('*', function (req, res) {
+  res.sendFile('index.html', { root: __dirname });
 });
 
 app.post('/myaction', function(req, res){
