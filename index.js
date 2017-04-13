@@ -54,6 +54,7 @@ app.listen(app.get('port'), function() {
 });
 
 function sendRequest(url, req, res){
+  console.log(url);
   request(url, function(error, response, html){
     if(!error && response.statusCode == 200){
       var $ = cheerio.load(html);
