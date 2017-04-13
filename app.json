@@ -1,0 +1,6 @@
+{
+  "name": "nlp-kcd",
+  "description": "NLP based Key Character Detector",
+  "repository": "https://github.com/The-Log/nlp-kcd",
+  "keywords": ["node", "express", "heroku"],
+}
