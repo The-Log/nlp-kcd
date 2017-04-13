@@ -16,7 +16,8 @@
     "request":"2.81.0",
     "path":"0.12.7",
     "body-parser":"1.17.1",
-    "pos":"0.4.2"
+    "pos":"0.4.2",
+    "stopwords":"0.0.5"
   },
   "repository": {
     "type": "git",
